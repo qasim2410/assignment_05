@@ -1,12 +1,12 @@
 # develop a Streamlit based secure data storage and retrieval system
 import streamlit as st
-import hashlib
+# Removed unused import hashlib
 import json
 import os
 import time
-from cryptography.fernet import Fernet
+from cryptography.fernet import Fernet  # Ensure the cryptography package is installed
 from base64 import urlsafe_b64encode
-from hashlib import sha256, pbkdf2_hmac
+from hashlib import pbkdf2_hmac  # Removed unused sha256
 
 # Constants
 DATA_FILE = 'secure_data.json'
@@ -59,7 +59,7 @@ stored_data = load_data()
 # UI and Navigation
 st.title("🔐 Secure Data Encryption System")
 menu = ["Home", "Register", "Login", "Store Data", "Retrieve Data"]
-choice = st.sidebar.selectbox("Navigation", menu)
+choice = st.sidebar.selectbox("Navigation", menu)  # Ensure Streamlit is installed and correctly imported
 
 # Home
 if choice == "Home":
